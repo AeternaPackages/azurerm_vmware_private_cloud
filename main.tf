@@ -12,12 +12,12 @@ locals {
 }
 
 module "vmware_private_clouds" {
-  source                = "git::https://github.com/AeternaModules/azurerm_vmware_private_cloud.git?ref=v5.0.0"
+  source                = "git::https://github.com/AeternaModules/azurerm_vmware_private_cloud.git?ref=v5.0.1"
   vmware_private_clouds = local.vmware_private_clouds
 }
 
 module "vmware_express_route_authorizations" {
-  source                              = "git::https://github.com/AeternaModules/azurerm_vmware_express_route_authorization.git?ref=v5.0.0"
+  source                              = "git::https://github.com/AeternaModules/azurerm_vmware_express_route_authorization.git?ref=v5.0.1"
   vmware_express_route_authorizations = local.vmware_express_route_authorizations
   depends_on                          = [module.vmware_private_clouds]
 }
